@@ -11,6 +11,8 @@ K = size(centroids, 1);
 % You need to return the following variables correctly.
 idx = zeros(size(X,1), 1);
 
+full_distances = zeros(size(X,1), length(centroids(:, 1)));
+
 % ====================== YOUR CODE HERE ======================
 % Instructions: Go over every example, find its closest centroid, and store
 %               the index inside idx at the appropriate location.
@@ -21,11 +23,16 @@ idx = zeros(size(X,1), 1);
 % Note: You can use a for-loop over the examples to compute this.
 %
 
+for i=1:length(full_distances)
+	each_row = zeros(1, length(centroids(:, 1)));
+	for j=1:length(centroids(:, 1))
+		% Euclidian between from points
+		each_row(j) = norm(X(i,:) - centroids(j,:), 2);
+	endfor
+	full_distances(i, :) = each_row;
+endfor
 
-
-
-
-
+[a, idx] = min(full_distances, [], 2);
 
 % =============================================================
 
