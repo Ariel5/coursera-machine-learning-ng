@@ -64,8 +64,8 @@ fprintf('Top eigenvector: \n');
 fprintf(' U(:,1) = %f %f \n', U(1,1), U(2,1));
 fprintf('\n(you should expect to see -0.707107 -0.707107)\n');
 
-fprintf('Program paused. Press enter to continue.\n');
-pause;
+% fprintf('Program paused. Press enter to continue.\n');
+% pause;
 
 
 %% =================== Part 3: Dimension Reduction ===================
