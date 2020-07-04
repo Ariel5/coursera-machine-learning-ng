@@ -35,8 +35,8 @@ load ('ex7data1.mat');
 plot(X(:, 1), X(:, 2), 'bo');
 axis([0.5 6.5 2 8]); axis square;
 
-fprintf('Program paused. Press enter to continue.\n');
-pause;
+% fprintf('Program paused. Press enter to continue.\n');
+% pause;
 
 
 %% =============== Part 2: Principal Component Analysis ===============
@@ -55,10 +55,10 @@ fprintf('\nRunning PCA on example dataset.\n\n');
 
 %  Draw the eigenvectors centered at mean of data. These lines show the
 %  directions of maximum variations in the dataset.
-hold on;
-drawLine(mu, mu + 1.5 * S(1,1) * U(:,1)', '-k', 'LineWidth', 2);
-drawLine(mu, mu + 1.5 * S(2,2) * U(:,2)', '-k', 'LineWidth', 2);
-hold off;
+% hold on;
+% drawLine(mu, mu + 1.5 * S(1,1) * U(:,1)', '-k', 'LineWidth', 2);
+% drawLine(mu, mu + 1.5 * S(2,2) * U(:,2)', '-k', 'LineWidth', 2);
+% hold off;
 
 fprintf('Top eigenvector: \n');
 fprintf(' U(:,1) = %f %f \n', U(1,1), U(2,1));
