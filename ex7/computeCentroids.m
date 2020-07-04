@@ -26,11 +26,16 @@ centroids = zeros(K, n);
 % Note: You can use a for-loop over the centroids to compute this.
 %
 
+% X_and_idx = [X, idx];
 
-
-
-
-
+for i=1:K
+	% 1-hot based on the 3rd column
+	a = mean(X(idx == i, :));
+	if (length(a) == 0)
+		a = zeros(1, n);
+	endif
+	centroids(i, :) = a;
+endfor
 
 
 % =============================================================
