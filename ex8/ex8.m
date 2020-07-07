@@ -61,12 +61,12 @@ fprintf('Visualizing Gaussian fit.\n\n');
 p = multivariateGaussian(X, mu, sigma2);
 
 %  Visualize the fit
-visualizeFit(X,  mu, sigma2);
-xlabel('Latency (ms)');
-ylabel('Throughput (mb/s)');
+% visualizeFit(X,  mu, sigma2);
+% xlabel('Latency (ms)');
+% ylabel('Throughput (mb/s)');
 
-fprintf('Program paused. Press enter to continue.\n');
-pause;
+% fprintf('Program paused. Press enter to continue.\n');
+% pause;
 
 %% ================== Part 3: Find Outliers ===================
 %  Now you will find a good epsilon threshold using a cross-validation set
