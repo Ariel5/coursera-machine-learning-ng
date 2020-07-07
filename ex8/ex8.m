@@ -39,8 +39,8 @@ axis([0 30 0 30]);
 xlabel('Latency (ms)');
 ylabel('Throughput (mb/s)');
 
-fprintf('Program paused. Press enter to continue.\n');
-pause
+% fprintf('Program paused. Press enter to continue.\n');
+% pause
 
 
 %% ================== Part 2: Estimate the dataset statistics ===================
