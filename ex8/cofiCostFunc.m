@@ -41,18 +41,17 @@ Theta_grad = zeros(size(Theta));
 %
 
 
+h = X * Theta';
+
+J = 1/2 * sum(sum(((h - Y).^2).*R));
 
 
+% Regularize cost
+J += lambda/(2) * sum(Theta(2:end).^2);
 
-
-
-
-
-
-
-
-
-
+% Regged grad. Don't mess with 1st col
+Theta(1) = 0;
+grad = ((h-Y)'*X) + lambda * Theta;
 
 
 % =============================================================
