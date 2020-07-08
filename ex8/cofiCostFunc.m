@@ -43,15 +43,15 @@ Theta_grad = zeros(size(Theta));
 
 h = X * Theta';
 
-J = 1/2 * sum(sum(((h - Y).^2).*R));
+error_matrix_by_R = ((h - Y).*R);
+J = 1/2 * sum(sum(error_matrix_by_R.^2));
 
 
 % Regularize cost
-J += lambda/(2) * sum(Theta(2:end).^2);
+J += lambda/2 * sum(Theta(2:end).^2);
 
-% Regged grad. Don't mess with 1st col
-Theta(1) = 0;
-grad = ((h-Y)'*X) + lambda * Theta;
+X_grad = error_matrix_by_R * Theta;
+Theta_grad = error_matrix_by_R' * X;
 
 
 % =============================================================
