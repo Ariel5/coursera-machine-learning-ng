@@ -48,10 +48,10 @@ J = 1/2 * sum(sum(error_matrix_by_R.^2));
 
 
 % Regularize cost
-J += lambda/2 * sum(Theta(2:end).^2);
+J += lambda/2 * (sum(sum(Theta.^2)) + sum(sum(X.^2)));
 
-X_grad = error_matrix_by_R * Theta;
-Theta_grad = error_matrix_by_R' * X;
+X_grad = error_matrix_by_R * Theta + lambda*X;
+Theta_grad = error_matrix_by_R' * X + lambda*Theta;
 
 
 % =============================================================
